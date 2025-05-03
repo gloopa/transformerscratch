@@ -1,6 +1,6 @@
 # Mini-Transformer: Language Model From Scratch
 
-This project implements a small (10M-30M parameter) Transformer-based language model from scratch using PyTorch's low-level tensor operations. The model is trained on the WikiText-2 dataset for next-token prediction.
+Hey, Im Ashwin. This is a small (10M-30M parameter) Transformer-based language model from scratch using PyTorch's low-level tensor operations. The model is trained on the WikiText-2 dataset for next-token prediction. I am currently building a "Mini-GPT" for this, as I think a frontend would be very valuable. Stay Tuned!
 
 ## Features
 
@@ -11,23 +11,6 @@ This project implements a small (10M-30M parameter) Transformer-based language m
 - Positional encodings
 - Training loop with gradient clipping and AdamW optimizer
 - Learning rate scheduler with warmup
-- Mixed precision training (optional)
-
-## Project Structure
-
-```
-mini-transformer/
-├── data/
-│   └── wikitext-2/               # Tokenized & preprocessed WikiText data
-├── src/
-│   ├── model/                    # Model implementation
-│   ├── train/                    # Training logic
-│   └── data/                     # Data processing
-├── plots/                        # Training visualizations
-├── checkpoints/                  # Saved model checkpoints
-├── README.md
-└── requirements.txt
-```
 
 ## Setup and Training
 
