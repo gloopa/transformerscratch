@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniGPT Playground</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container my-4">
+        <header class="mb-4 text-center">
+            <h1>MiniGPT Playground</h1>
+            <p class="text-muted">Interact with your custom-trained transformer model</p>
+        </header>
+
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <label for="prompt" class="form-label">Prompt</label>
+                                <div>
+                                    <button id="clearBtn" class="btn btn-sm btn-outline-secondary">
+                                        <i class="fas fa-trash-alt"></i> Clear
+                                    </button>
+                                </div>
+                            </div>
+                            <textarea id="prompt" class="form-control" rows="6" placeholder="Start typing..."></textarea>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <div class="mb-3 me-2">
+                                <label for="maxTokens" class="form-label">Max Tokens</label>
+                                <input type="number" class="form-control form-control-sm" id="maxTokens" value="50" min="1" max="1000">
+                            </div>
+                            <div class="mb-3 me-2">
+                                <label for="temperature" class="form-label">Temperature</label>
+                                <input type="number" class="form-control form-control-sm" id="temperature" value="0.7" min="0" max="2" step="0.1">
+                            </div>
+                            <div class="mb-3 d-flex align-items-end">
+                                <button id="generateBtn" class="btn btn-primary">
+                                    <i class="fas fa-play me-1"></i> Generate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4 shadow-sm" id="resultCard" style="display: none;">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Generated Output</span>
+                        <button id="copyBtn" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <pre id="output" class="mb-0"></pre>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4" id="loadingSpinner" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2 text-muted">Generating...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 

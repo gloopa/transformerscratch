@@ -1,0 +1,6 @@
+torch>=1.9.0
+numpy>=1.20.0
+tqdm>=4.61.0
+matplotlib>=3.4.0
+datasets>=1.8.0
+tokenizers>=0.10.0 

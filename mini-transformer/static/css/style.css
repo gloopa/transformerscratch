@@ -1,0 +1,51 @@
+/* Custom styles for MiniGPT Playground */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+h1 {
+    font-weight: 600;
+    color: #343a40;
+}
+
+textarea.form-control {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+pre#output {
+    font-family: 'Consolas', 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 1rem;
+    min-height: 60px;
+}
+
+.card {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.typing-animation {
+    border-right: 2px solid #000;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #000 }
+} 
